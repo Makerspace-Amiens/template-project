@@ -116,6 +116,7 @@ hs_err_pid*
 replay_pid*
 
 ### Jekyll ###
+Gemfile.lock
 _site/
 .sass-cache/
 .jekyll-cache/
