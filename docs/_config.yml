@@ -5,7 +5,8 @@ description: Documentation du projet
 
 # Thème
 # remote_theme: Makerspace-Amiens/CraftTheDocs-V1.0
-theme: just-the-docs
+remote_theme: pmarsceill/just-the-docs
+color_scheme: unilasalle
 url: https://github.com/Makerspace-Amiens
 
 # Paramètres optionnels de "Just the Docs"

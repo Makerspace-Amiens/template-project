@@ -68,31 +68,47 @@ Dans le terminal ouvert :
 
 ---
 
-## Sur Linux (non testé)
+## Sur Linux (testé sur Debian 12)
 
 ### Étape 1 : Installer Visual Studio Code
 {: .no_toc }
 
-1. Téléchargez et installez Visual Studio Code depuis [le site officiel](https://code.visualstudio.com/).
-2. Vous pouvez également utiliser votre gestionnaire de paquets pour l'installer, par exemple `sudo apt install code` sur les distributions basées sur Debian/Ubuntu.
+1. Téléchargez et installez Visual Studio Code depuis [le site officiel](https://code.visualstudio.com/) à l'aide du `.deb`.
+
+2. Ou vous pouvez également utiliser votre gestionnaire de paquets pour l'installer :
+
+```sh
+sudo apt update
+
+cd /tmp && wget -O vscode.deb 'https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64'
+
+sudo apt install ./vscode.deb
+```
 
 ### Étape 2 : Installer Ruby
 {: .no_toc }
 
 1. Ouvrez un terminal.
-2. Installez Ruby via votre gestionnaire de paquets, par exemple `sudo apt install ruby-full` sur les distributions basées sur Debian/Ubuntu.
+2. Installez Ruby via votre gestionnaire de paquets, par exemple `sudo apt install ruby-full build-essential` sur les distributions basées sur Debian.
 3. Vérifiez l'installation avec `ruby -v`.
 
-**Étape 3 : similaires à celles de Windows**
-
-### Étape 4 : Installer Bundler et Jekyll
+### Étape 3 : Installer Bundler
 {: .no_toc }
 
-1. Dans le terminal, exécutez `gem install bundler`.
-2. Puis, dans le dossier de votre projet, exécutez `bundle install`.
+1. Dans le terminal, ajoutez le répertoire d'exécutables gem aux variables d'environnement du shell `echo -e '\n### Gems ###\nexport GEM_HOME=$(ruby -e "puts Gem.user_dir")\nexport PATH="$PATH:$GEM_HOME/bin"' >> $HOME/.bashrc && source $HOME/.bashrc`, sans ceci il ne sera pas possible d'installer les outils suivants requis.
+2. Ensuite installez bundler à l'aide de gem comme suit `gem install bundler`.
 
-**Étape 5 : similaires à celles de Windows**
-{: .no_toc }
+### Étape 4 : Installer les dépendances du projet
+
+1. Dans VSCode, ouvrez le dossier cloné (Fichier -> Ouvrir Dossier).
+2. Naviguez jusqu'au dossier `docs/` (où se trouve le fichier `Gemfile`).
+3. Faites un clic droit sur le dossier `docs/` et sélectionnez "Ouvrir dans le Terminal intégré".
+4. Exécutez `bundle install` pour installer les dépendances requises du projet.
+
+### Étape 5 : Construire et servir le Site
+
+1. Dans un terminal à l'emplacement `projet/docs`, executez `bundle exec jekyll serve`.
+2. Ouvrez un navigateur web et allez à (http://localhost:4000)[http://localhost:4000] pour voir votre site Jekyll en action. Chaque modification de la documentation apparaitra automatiquement après rafraichissement de la page.
 
 ## Sur macOS (non testé)
 
