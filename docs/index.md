@@ -5,41 +5,57 @@ title: Accueil
 permalink: /
 ---
 
-# Bienvenue sur notre documentation
+{: .a_supprimer }
+> Ce site est le **template de documentation** de votre projet. Tout ce qui est
+> marqué « À modifier » est un exemple à remplacer par votre contenu, tout ce qui
+> est marqué « À supprimer » est une consigne à retirer avant le rendu final.
+>
+> Le découpage des pages est un **point de départ** : ajoutez, renommez, divisez
+> les pages selon les besoins de votre projet.
+>
+> Les guides pour prendre en main ce template sont sur le
+> [site de documentation du MakerSpace](https://doc.makerspace-amiens.fr/workshops/methodologie-de-projet/).
 
-Bienvenue dans la documentation du projet XY. Ce site a pour but de fournir toutes les informations nécessaires pour comprendre, utiliser et reproduire efficacement notre projet.
+# Nom du projet
 
-[Notre projet sur Onshape](https://cad.onshape.com/documents/2860ed3d58f1b518e6857770/w/82b3c0e474623135ccb76fa3/e/0cab16137cd459ee83ebe56e?renderMode=0&uiState=6936dc0e23fecc27d34268b2){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
-[Notre repo GitHub](https://github.com/Makerspace-Amiens/template-project){: .btn .fs-5 .mb-4 .mb-md-0 }
+{: .a_modifier }
+> Remplacez le titre ci-dessus et le texte ci-dessous par une présentation de votre projet.
 
-<iframe height="600" width="100%" src="https://modelembedder.net/embed?did=2860ed3d58f1b518e6857770&wvm=v&wvmid=6280fca954e7770df59e5a2f&eid=0cab16137cd459ee83ebe56e&elementType=ASSEMBLY" frameborder="0"></iframe>
+Décrivez ici en quelques lignes l'objectif de votre projet. Quel est son but ?
+À qui est-il destiné ? Quel problème cherche-t-il à résoudre ?
 
-{: .warning }
->Pour intégrer la visualisation de votre projet Onshape, utilisez le site https://modelembedder.net . Activez le partage par lien via l'outil de partage de Onshape. n'oubliez pas d'activer l'option "export". Puis completez l'iframe ci-dessus avec le lien généré par le site https://modelembedder.net. Vous pouvez mettre à jour également le bouton avec le lien de partage de votre modèle.
+[Notre repo GitHub]({{ site.gh_edit_repository }}){: .btn .btn-primary .fs-5 .mb-4 .mb-md-0 .mr-2 }
+[Notre projet sur Onshape](https://cad.onshape.com/){: .btn .fs-5 .mb-4 .mb-md-0 }
 
+{: .a_modifier }
+> Remplacez le lien du bouton « Onshape » par le lien de partage de votre document.
+> Le bouton « repo GitHub » utilise l'adresse renseignée dans `docs/_config.yml`.
 
-## À propos du Projet
+## Le projet en 3D
 
-Décrivez ici en quelques lignes l'objectif et l'aperçu général de votre projet. Quel est son but ? À qui est-il destiné ? Quels problèmes cherche-t-il à résoudre ?
+{% include model3d.html src="assets/models/Otto.glb" alt="Modèle 3D du robot Otto" %}
 
+{: .a_modifier }
+> Exportez votre assemblage au format **GLB** (glTF binaire) depuis Onshape
+> (clic droit sur l'onglet de l'assemblage > Exporter), placez-le dans `docs/assets/models/`,
+> remplacez `Otto.glb` ci-dessus par le nom de votre fichier, puis supprimez `Otto.glb`.
+> Gardez le fichier sous **25 Mo**.
 
 ## Poster
 
-Ici vous publierez le poster de votre projet.
+![Poster du projet](assets/images/poster.jpg)
 
-![Poster projet](images/poster.jpg)
+{: .a_modifier }
+> Remplacez `docs/assets/images/poster.jpg` par votre poster (image de moins de **2 Mo**).
 
 ## Vidéo
 
-Ici vous publierez la vidéo de votre projet. 
-- 1min30 au format vertical
-- Présentation du projet 
-- Des explication du fonctionnement du projet
-- Des vues du projet / Prototype / Application etc... 
-- Des plans du fonctionnement (même basique ou des éléments séparés)
-- Une conclusion
-- Si en stockage local : <50mo
+<video src="assets/images/intro_amiens.mp4" controls title="Présentation du projet" style="width: 100%;"></video>
 
-<video src="images/intro_amiens.mp4" controls title="Title"  style="width: 100%;"></video>
-
----
+{: .a_modifier }
+> Remplacez `docs/assets/images/intro_amiens.mp4` par votre vidéo :
+> - 1 min 30 au format vertical ;
+> - présentation du projet, fonctionnement, vues du prototype, conclusion ;
+> - moins de **25 Mo** (exportez en 720p, par exemple avec HandBrake).
+>
+> Voir [Créer le poster et la vidéo de présentation](https://doc.makerspace-amiens.fr/workshops/methodologie-de-projet/tutorials/poster-video-presentation/).
