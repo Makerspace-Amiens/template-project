@@ -22,7 +22,13 @@ jobs:
           cache-version: 0 # Increment this number if you need to re-download cached gems
           working-directory: ${{env.working-directory}}
       - name: Build with Jekyll
-        run: bundle exec jekyll build
+        # Mêmes conditions que la publication (production, URL du site renseignée)
+        run: |
+          echo "url: \"https://${{ github.repository_owner }}.github.io\"" > _config_pages.yml
+          echo "baseurl: \"/${{ github.event.repository.name }}\"" >> _config_pages.yml
+          bundle exec jekyll build --config _config.yml,_config_pages.yml
+        env:
+          JEKYLL_ENV: production
         working-directory: ${{env.working-directory}}
 
   # Vérifications du contenu : n'empêchent pas la publication du site,

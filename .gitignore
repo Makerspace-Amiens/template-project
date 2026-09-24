@@ -485,3 +485,6 @@ pyrightconfig.json
 !project/firmware/**/lib/
 # Nomenclatures (BOM) publiées sur le site
 !docs/**/*.csv
+
+# Configuration générée par les workflows GitHub Actions
+docs/_config_pages.yml
