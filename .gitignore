@@ -480,3 +480,8 @@ poetry.toml
 pyrightconfig.json
 
 # End of https://www.toptal.com/developers/gitignore/api/c++,kicad,jekyll,freecad,platformio,c,python,java,node
+### Exceptions du template MakerSpace ###
+# Bibliothèques locales PlatformIO (ignorées plus haut par la règle Python "lib/")
+!project/firmware/**/lib/
+# Nomenclatures (BOM) publiées sur le site
+!docs/**/*.csv
