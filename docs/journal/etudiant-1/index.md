@@ -5,9 +5,10 @@ parent: Journal de bord
 has_children: true
 ---
 
-# Étudiant 1
+# Victor de Castelnau
 
-{: .a_modifier }
-> Remplacez « Étudiant 1 » par votre prénom et votre nom, **dans le titre de la page
-> (`title:`) et dans le `parent:` de chacune de vos séances** : c'est ce qui
-> relie vos séances à votre page.
+- création des groupes
+- annonce du projet
+- decouverte du cahier des charges
+- On a commencé a regarder comment la machine va fonctionner
+- mise en place des roles
